@@ -8,7 +8,7 @@ namespace GPG212_04
     {
         private Rigidbody _rb;
 
-        public bool isSelectingColour = false;
+        public bool canInteractWithHair = true;
 
         private void Start()
         {
@@ -17,7 +17,7 @@ namespace GPG212_04
         private void Update()
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (Input.GetMouseButton(0) && !isSelectingColour)
+            if (Input.GetMouseButton(0) && canInteractWithHair)
             {
                 transform.position = new Vector3(mousePos.x, mousePos.y, 0);
             }
@@ -28,9 +28,21 @@ namespace GPG212_04
             }
         }
 
-        public void ToggleIsSelectingColor()
+        public void ToggleCanInteractWithHair()
         {
-            isSelectingColour= !isSelectingColour;
+            canInteractWithHair= !canInteractWithHair;
+        }
+        public void DisableHairInteraction()
+        {
+            canInteractWithHair = false;
+        }
+        private void OnEnable()
+        {
+            GameManager.OnGameOver += DisableHairInteraction;
+        }
+        private void OnDisable()
+        {
+            GameManager.OnGameOver -= DisableHairInteraction;
         }
     }
 }

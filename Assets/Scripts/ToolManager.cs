@@ -27,8 +27,11 @@ namespace GPG212_04
                 switch (currentTool)
                 {
                     case Tool.Clippers:
-                        sr.sprite = hairShaved;
-                        if (sr.color == Color.white) sr.color = Color.black;
+                        if (sr.sprite != null)
+                        {
+                            sr.sprite = hairShaved;
+                            if (sr.color == Color.white) sr.color = Color.black;
+                        }
                         break;
 
                     case Tool.Razor:
@@ -56,7 +59,7 @@ namespace GPG212_04
                         else if (sr.sprite == null)
                         {
                             sr.sprite = hairShaved;
-                            if (sr.color == Color.white) sr.color = Color.black;
+                            sr.color = Color.black;
                         }
                         break;
 
