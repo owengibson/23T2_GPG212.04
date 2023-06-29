@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1196387652460243232}
   - component: {fileID: 6190083809896403922}
-  - component: {fileID: 6480429159355329268}
   - component: {fileID: 6713062639871788745}
   m_Layer: 0
   m_Name: Hair
@@ -86,18 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6480429159355329268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8259943092181513423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e39a75c6f96e0d4b84b27621e661d72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &6713062639871788745
 BoxCollider:
   m_ObjectHideFlags: 0

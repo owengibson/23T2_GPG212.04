@@ -27,10 +27,5 @@ namespace GPG212_04
         {
             isGameTimed = isTimed;
         }
-
-        public void LoadScene(string sceneName)
-        {
-            SceneManager.LoadScene(sceneName);
-        }
     }
 }

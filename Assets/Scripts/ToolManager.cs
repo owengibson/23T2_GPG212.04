@@ -1,3 +1,4 @@
+using EasyAudioSystem;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +7,7 @@ namespace GPG212_04
 {
     public class ToolManager : MonoBehaviour
     {
-        public Tool currentTool = Tool.Clippers;
+        public static Tool currentTool = Tool.Clippers;
 
         [Space]
         [Header("Hair Sprites")]
@@ -26,14 +27,19 @@ namespace GPG212_04
                 SpriteRenderer sr = other.gameObject.GetComponent<SpriteRenderer>();
                 switch (currentTool)
                 {
+                    // CLIPPERS
                     case Tool.Clippers:
                         if (sr.sprite != null)
                         {
                             sr.sprite = hairShaved;
-                            if (sr.color == Color.white) sr.color = Color.black;
+                            if (sr.color == Color.white)
+                            {
+                                sr.color = Color.black;
+                            }
                         }
                         break;
-
+                    
+                    // RAZOR
                     case Tool.Razor:
                         if (sr.sprite == hairShaved)
                         {
@@ -41,20 +47,28 @@ namespace GPG212_04
                         }
                         break;
 
+                    // DYE
                     case Tool.Dye:
                         sr.color = dyeBottle.color;
                         break;
 
+                    // FORMULA
                     case Tool.Formula:
                         if (sr.sprite == hairNormal)
                         {
                             sr.sprite = hairLong;
-                            if (sr.color == Color.white) sr.color = Color.black;
+                            if (sr.color == Color.white)
+                            {
+                                sr.color = Color.black;
+                            }
                         }
                         else if (sr.sprite == hairShaved)
                         {
                             sr.sprite = hairNormal;
-                            if (sr.color == Color.white) sr.color = Color.black;
+                            if (sr.color == Color.white)
+                            {
+                                sr.color = Color.black;
+                            }
                         }
                         else if (sr.sprite == null)
                         {

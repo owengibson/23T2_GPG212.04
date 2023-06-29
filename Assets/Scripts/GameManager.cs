@@ -1,3 +1,4 @@
+using EasyAudioSystem;
 using System;
 using TMPro;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace GPG212_04
         [SerializeField] private GameObject postGamePanel;
 
         private bool _isGameTimed;
-        private bool _hasGameFinished = false;
+        private bool _isTimerRunning = true;
         private float _startingTime = 30f;
         private float _currentTime = 30f;
 
@@ -35,10 +36,11 @@ namespace GPG212_04
         }
         private void Update()
         {
-            if (_isGameTimed && !_hasGameFinished)
+            if (_isGameTimed && _isTimerRunning)
             {
                 _currentTime -= Time.deltaTime;
                 timerText.text = _currentTime.ToString("00.00");
+
                 if (_currentTime <= 0)
                 {
                     OnGameOver?.Invoke();
@@ -48,14 +50,15 @@ namespace GPG212_04
 
         private void GameOver()
         {
-            _hasGameFinished = true;
+            _isTimerRunning = false;
             timerText.text = "DONE";
             postGamePanel.SetActive(true);
+            AudioManager.PlayAudio("Finish");
         }
 
-        public void LoadScene(string sceneName)
+        public void ToggleIsTimerRunning()
         {
-            SceneManager.LoadScene(sceneName);
+            _isTimerRunning = !_isTimerRunning;
         }
 
         private void OnEnable()

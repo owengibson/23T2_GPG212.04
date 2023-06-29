@@ -15,7 +15,6 @@ namespace GPG212_04
         [SerializeField] private Vector2 extraMinBounds = new Vector2(-1.2f, -2.3f);
         [SerializeField] private Vector2 extraMaxBounds = new Vector2(1.5f, 2.5f);
 
-
         [Space]
         [Header("References")]
         [SerializeField] private GameObject hairPrefab;

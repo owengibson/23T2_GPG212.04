@@ -1,6 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using EasyAudioSystem;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace GPG212_04
 {
@@ -10,12 +11,20 @@ namespace GPG212_04
 
         public bool canInteractWithHair = true;
 
+        [SerializeField] private EventSystem eventSystem;
+
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
         }
         private void Update()
         {
+            if (Input.GetMouseButtonDown(0) && canInteractWithHair)
+            {
+                AudioManager.PlayAudio(ToolManager.currentTool.ToString());
+            }
+
+            // Move pointer with mouse/finger
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (Input.GetMouseButton(0) && canInteractWithHair)
             {
@@ -25,6 +34,10 @@ namespace GPG212_04
             if (Input.GetMouseButtonUp(0))
             {
                 _rb.velocity = Vector3.zero;
+                if (canInteractWithHair)
+                {
+                    AudioManager.StopAllAudio();
+                }
             }
         }
 
@@ -32,17 +45,14 @@ namespace GPG212_04
         {
             canInteractWithHair= !canInteractWithHair;
         }
-        public void DisableHairInteraction()
-        {
-            canInteractWithHair = false;
-        }
+
         private void OnEnable()
         {
-            GameManager.OnGameOver += DisableHairInteraction;
+            GameManager.OnGameOver += ToggleCanInteractWithHair;
         }
         private void OnDisable()
         {
-            GameManager.OnGameOver -= DisableHairInteraction;
+            GameManager.OnGameOver -= ToggleCanInteractWithHair;
         }
     }
 }
