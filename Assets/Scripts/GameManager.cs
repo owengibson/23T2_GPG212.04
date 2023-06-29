@@ -53,6 +53,7 @@ namespace GPG212_04
             _isTimerRunning = false;
             timerText.text = "DONE";
             postGamePanel.SetActive(true);
+            AudioManager.StopAudio("Soundtrack");
             AudioManager.PlayAudio("Finish");
         }
 

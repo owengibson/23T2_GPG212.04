@@ -924,7 +924,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &453109457
 PrefabInstance:
@@ -1283,7 +1283,7 @@ RectTransform:
   - {fileID: 1874268272}
   - {fileID: 453109458}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1492,6 +1492,93 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 086b1019acc83f247bb62cf82bba2024, type: 3}
+--- !u!1 &749041537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 749041539}
+  - component: {fileID: 749041540}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &749041539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749041537}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &749041540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749041537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ddff165ecfb7b5438de48a1a0ca4908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Clippers
+    clip: {fileID: 8300000, guid: 400841e42c38693498a909b4afa40add, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 1
+    tag: Tool
+    source: {fileID: 0}
+  - name: Razor
+    clip: {fileID: 8300000, guid: 3d4e59458cdc68f4897c86f523b665a8, type: 3}
+    volume: 1
+    pitch: 1.5
+    loop: 1
+    tag: Tool
+    source: {fileID: 0}
+  - name: Dye
+    clip: {fileID: 8300000, guid: 2538331b7e7be7143b31310e73253fcf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    tag: Tool
+    source: {fileID: 0}
+  - name: Formula
+    clip: {fileID: 8300000, guid: e75e479f830c2d84281e8823ea792bcf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    tag: Tool
+    source: {fileID: 0}
+  - name: Finish
+    clip: {fileID: 8300000, guid: 5b91fa6fca9f4c84e82bd85526c353b4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    tag: General
+    source: {fileID: 0}
+  - name: Soundtrack
+    clip: {fileID: 8300000, guid: 625d74c59ce7837459108a31f4c40c12, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    tag: General
+    source: {fileID: 0}
 --- !u!1 &792887974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,7 +3025,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1853214946 stripped
 RectTransform:
@@ -3577,7 +3664,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2084188264
 GameObject:

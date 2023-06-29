@@ -11,11 +11,9 @@ namespace EasyAudioSystem
 
         public static Action<string> PlayAudio;
         public static Action<string> StopAudio;
+        public static Action<string> StopAllAudioWithTag;
         public static Action StopAllAudio;
 
-        [HideInInspector] public Sound mainStart;
-        private Sound mainLoop;
-        private Sound deathScreen;
 
         private void Awake()
         {
@@ -28,7 +26,7 @@ namespace EasyAudioSystem
                 Destroy(gameObject);
                 return;
             }
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
 
             foreach (Sound s in sounds)
             {
@@ -39,6 +37,9 @@ namespace EasyAudioSystem
                 s.source.pitch = s.pitch;
                 s.source.loop = s.loop;
             }
+
+            // Play soundtrack
+            Play(Array.Find(sounds, sound => sound.name == "Soundtrack").name);
         }
 
         public void Play(string name)
@@ -61,17 +62,30 @@ namespace EasyAudioSystem
             }
         }
 
+        public void StopAllWithTag(string tag)
+        {
+            foreach (Sound s in sounds)
+            {
+                if (s.tag == tag)
+                {
+                    s.source.Stop();
+                }
+            }
+        }
+
         private void OnEnable()
         {
             PlayAudio += Play;
             StopAudio += Stop;
             StopAllAudio += StopAll;
+            StopAllAudioWithTag += StopAllWithTag;
         }
         private void OnDisable()
         {
             PlayAudio -= Play;
             StopAudio -= Stop;
             StopAllAudio -= StopAll;
+            StopAllAudioWithTag -= StopAllWithTag;
         }
     }
 }

@@ -34,10 +34,7 @@ namespace GPG212_04
             if (Input.GetMouseButtonUp(0))
             {
                 _rb.velocity = Vector3.zero;
-                if (canInteractWithHair)
-                {
-                    AudioManager.StopAllAudio();
-                }
+                AudioManager.StopAllAudioWithTag("Tool");
             }
         }
 

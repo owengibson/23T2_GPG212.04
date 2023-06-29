@@ -17,6 +17,8 @@ namespace EasyAudioSystem
         [Range(0.1f, 3f)]
         public float pitch;
         public bool loop;
+        [Space]
+        public string tag;
 
         [HideInInspector]
         public AudioSource source;

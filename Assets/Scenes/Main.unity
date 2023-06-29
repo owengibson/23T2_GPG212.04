@@ -1058,6 +1058,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 496291719}
+        m_TargetAssemblyTypeName: EasyAudioSystem.AudioManager, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Soundtrack
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 496291719}
+        m_TargetAssemblyTypeName: EasyAudioSystem.AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Finish
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 482274778}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
@@ -1120,37 +1144,42 @@ MonoBehaviour:
     volume: 0.8
     pitch: 1
     loop: 1
+    tag: Tool
     source: {fileID: 0}
   - name: Razor
     clip: {fileID: 8300000, guid: 3d4e59458cdc68f4897c86f523b665a8, type: 3}
     volume: 1
     pitch: 1.5
     loop: 1
+    tag: Tool
     source: {fileID: 0}
   - name: Dye
     clip: {fileID: 8300000, guid: 2538331b7e7be7143b31310e73253fcf, type: 3}
     volume: 1
     pitch: 1
     loop: 1
+    tag: Tool
     source: {fileID: 0}
   - name: Formula
     clip: {fileID: 8300000, guid: e75e479f830c2d84281e8823ea792bcf, type: 3}
     volume: 1
     pitch: 1
     loop: 1
+    tag: Tool
     source: {fileID: 0}
   - name: Finish
     clip: {fileID: 8300000, guid: 5b91fa6fca9f4c84e82bd85526c353b4, type: 3}
     volume: 1
     pitch: 1
     loop: 0
+    tag: General
     source: {fileID: 0}
-  mainStart:
-    name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
+  - name: Soundtrack
+    clip: {fileID: 8300000, guid: 625d74c59ce7837459108a31f4c40c12, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    tag: General
     source: {fileID: 0}
 --- !u!1 &573044978
 GameObject:
