@@ -7,10 +7,12 @@ namespace GPG212_04
     public class HairGenerator : MonoBehaviour
     {
         [Header("Parameters")]
+        [Range(0, 4000)]
         [SerializeField] private int generalHairCount;
         [SerializeField] private Vector2 generalMinBounds = new Vector2(-3f, -2.6f);
         [SerializeField] private Vector2 generalMaxBounds = new Vector2(3f, 3f);
         [Space]
+        [Range(0, 4000)]
         [SerializeField] private int extraHairCount;
         [SerializeField] private Vector2 extraMinBounds = new Vector2(-1.2f, -2.3f);
         [SerializeField] private Vector2 extraMaxBounds = new Vector2(1.5f, 2.5f);
